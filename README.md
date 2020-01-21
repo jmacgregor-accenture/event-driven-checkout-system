@@ -8,9 +8,6 @@ the pre-tax total price as items are scanned or entered at checkout.
 This kata is nearly identical to the original except that rather than the checkout system making an API call to relay scanned items and weights,
 the scanner/scale hardware will fire an event with this data.
 
-Because of the additional layer of complexity around the new hardware vendor, the client's QA team has provided the data for standard pricing, 
-markdown pricing, and specials.
-
 Many items are sold at a per-unit price. For example, a can of soup sells for $1.89 each.
 
 Some items are sold by weight. For example, 80% lean ground beef currently sells for $5.99 per pound. Bananas are currently $2.38 per pound.
@@ -23,7 +20,6 @@ Along with the markdowns, a set of specials are advertised each week. For exampl
 Purchases not fitting the description of the special are sold at the per-unit price unless a markdown price has also been advertised.
 
 ## Requirements
-* Use the dictionaries provided in the "data" folder.
 * Items and weights will be relayed from the checkout hardware via events.
   * You should not worry about implementation of the IScannerSystem, a combination scanner and scale
   * A limited interface has been provided by the hardware team to allow you to test drive your application 
@@ -40,4 +36,3 @@ Purchases not fitting the description of the special are sold at the per-unit pr
 6. Support a limit on specials, for example, "buy 2 get 1 free, limit 6" would prevent getting a third free item.
 7. Support removing a scanned item, keeping the total correct after possibly invalidating a special.
 8. Support "Buy N, get M of equal or lesser value for %X off" on weighted items. For example, "Buy 2 pounds of ground beef, get 1 pound half off."
-
