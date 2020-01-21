@@ -5,6 +5,12 @@ Based on the [Checkout Order Total Kata](https://github.com/PillarTechnology/kat
 You have been contracted to write part of a grocery point-of-sale system. Your job is to implement the business logic to calculate 
 the pre-tax total price as items are scanned or entered at checkout.
 
+This kata is nearly identical to the original except that rather than the checkout system making an API call to relay scanned items and weights,
+the scanner/scale hardware will fire an event with this data.
+
+Because of the additional layer of complexity around the new hardware vendor, the client's QA team has provided the data for standard pricing, 
+markdown pricing, and specials.
+
 Many items are sold at a per-unit price. For example, a can of soup sells for $1.89 each.
 
 Some items are sold by weight. For example, 80% lean ground beef currently sells for $5.99 per pound. Bananas are currently $2.38 per pound.
@@ -17,10 +23,11 @@ Along with the markdowns, a set of specials are advertised each week. For exampl
 Purchases not fitting the description of the special are sold at the per-unit price unless a markdown price has also been advertised.
 
 ## Requirements
-* Your solution should have an API to configure the above kinds of prices, specials and markdowns. Instead of UPC or SKU codes, you may simply use strings such as "ground beef" or "soup" 
-to describe what has been scanned or entered. **NOTE:** The term "API" simply refers to a collection of logical function calls exposed by your application. It does not necessarily imply 
-something like a REST API.
-* It should repeatedly accept a scanned item or item and weight through an API call. It must keep an accurate current total through the process.
+* Use the dictionaries provided in the "data" folder.
+* Items and weights will be relayed from the checkout hardware via events.
+  * You should not worry about implementation of the IScannerSystem, a combination scanner and scale
+  * A limited interface has been provided by the hardware team to allow you to test drive your application 
+* It should repeatedly accept a scanned item or item and weight. It must keep an accurate current total through the process.
 * Clerks make mistakes. They need to be able to remove items from an order, immediately correcting the current total.
 * You are not responsible for the display system or printing a receipt; only calculating the pre-tax total. The display system or receipt may query your code for the total.
 * Your solution must not use a database. Everything will fit in memory.
