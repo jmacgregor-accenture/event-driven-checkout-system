@@ -36,3 +36,5 @@ Purchases not fitting the description of the special are sold at the per-unit pr
 6. Support a limit on specials, for example, "buy 2 get 1 free, limit 6" would prevent getting a third free item.
 7. Support removing a scanned item, keeping the total correct after possibly invalidating a special.
 8. Support "Buy N, get M of equal or lesser value for %X off" on weighted items. For example, "Buy 2 pounds of ground beef, get 1 pound half off."
+9. Oh no, the system is under heavy load and fetching a price for a SKU is taking ~1 second per scan. Make sure your program supports scans that may take a non-negligible amount of time.
+	* This can be simulated using [`Task.Delay`](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.delay)
