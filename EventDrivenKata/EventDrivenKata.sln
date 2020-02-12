@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDrivenKata.Library", "EventDrivenKata.Library\EventDrivenKata.Library.csproj", "{D17C943E-35B0-4DF6-AA06-C54588C71BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDrivenKata.Tests", "EventDrivenKata.Tests\EventDrivenKata.Tests.csproj", "{A42CD6C1-90EB-489A-A297-D89F0371419E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D17C943E-35B0-4DF6-AA06-C54588C71BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D17C943E-35B0-4DF6-AA06-C54588C71BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D17C943E-35B0-4DF6-AA06-C54588C71BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42CD6C1-90EB-489A-A297-D89F0371419E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42CD6C1-90EB-489A-A297-D89F0371419E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42CD6C1-90EB-489A-A297-D89F0371419E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42CD6C1-90EB-489A-A297-D89F0371419E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
