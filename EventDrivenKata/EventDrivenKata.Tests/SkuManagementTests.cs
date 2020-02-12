@@ -7,14 +7,14 @@ namespace EventDrivenKata.Tests
     [TestClass]
     public class SkuManagementTests
     {
-        [TestMethod]
-        public void SkuReturnsPrice()
+        [DataTestMethod]
+        [DataRow("Frodo", 5.0)]
+        [DataRow("Sauron", 499.99)]
+        public void SkuReturnsPrice(string sku, double expected)
         {
-            Decimal expected = 5.0m;
-
-            var actual = PriceFetcher.SkuToPrice("Frodo");
+            var actual = PriceFetcher.SkuToPrice(sku);
             
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual((decimal)expected, actual);
         }
     }
 }
