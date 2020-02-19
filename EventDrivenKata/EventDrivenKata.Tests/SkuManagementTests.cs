@@ -8,8 +8,8 @@ namespace EventDrivenKata.Tests
     public class SkuManagementTests
     {
         [DataTestMethod]
-        [DataRow("Frodo", 5.0)]
-        [DataRow("Sauron", 499.99)]
+        [DataRow("Sword", 5.0)]
+        [DataRow("Narsil", 499.99)]
         public void SkuReturnsPrice(string sku, double expected)
         {
             var actual = PriceFetcher.SkuToPrice(sku);

@@ -6,8 +6,8 @@ namespace EventDrivenKata.Library.Core.Sku
     {
         private static Dictionary<string, decimal> Prices = new Dictionary<string, decimal>
         {
-            { "Frodo", 5.0m},
-            { "Sauron", 499.99m}
+            { "Sword", 5.0m},
+            { "Narsil", 499.99m}
         };
 
         public static decimal SkuToPrice(string sku)

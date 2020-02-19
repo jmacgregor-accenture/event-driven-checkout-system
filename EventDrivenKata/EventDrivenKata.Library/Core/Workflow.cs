@@ -9,23 +9,14 @@ namespace EventDrivenKata.Library.Core
         public Workflow(IScanSystem scanSystem)
         {
             _scanSystem = scanSystem;
+            _scanSystem.ItemScannedEvent += ReadScan;
         }
 
         public decimal Total { get; private set; }
 
-        public void Start()
+        public void ReadScan(object sender, ScannedEventArgs args)
         {
-            _scanSystem.ItemScannedEvent += ReadScan;
-        }
-
-        public void Stop()
-        {
-            
-        }
-
-        private void ReadScan(object sender, ScannedEventArgs args)
-        {
-            Total = PriceFetcher.SkuToPrice(args.SKU);
+            Total += PriceFetcher.SkuToPrice(args.SKU);
         }
     }
 }
